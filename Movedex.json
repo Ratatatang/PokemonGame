@@ -1,0 +1,130 @@
+{
+    "Movedex": {
+        "tackle":{
+            "DisplayName" : "Tackle",
+            "Type": "Normal",
+            "Power": 40,
+            "PP": 35,
+            "Accuracy": 100,
+            "Category": "Physical",
+            "Flags": [],
+            "Target": "AdjacentFoe",
+            "Priority": 0,
+            "SpecialEffect": null,
+            "UserStat": {},
+            "EnemyStat": {}
+        },
+        "growl":{
+            "DisplayName" : "Growl",
+            "Type": "Normal",
+            "Power": 0,
+            "PP": 40,
+            "Accuracy": 100,
+            "Category": "Status",
+            "Flags": ["Sound"],
+            "Target": "AllAdjacentFoes",
+            "Priority": 0,
+            "SpecialEffect": null,
+            "StatChanges": {
+                "100":  {
+                    "Target": "Victim",
+                    "Attack": -1
+                }
+            }
+        },
+        "vine_whip":{
+            "DisplayName" : "Vine Whip",
+            "Type": "Grass",
+            "Power": 50,
+            "PP": 25,
+            "Accuracy": 100,
+            "Category": "Physical",
+            "Flags": [],
+            "Target": "AdjacentFoe",
+            "Priority": 0,
+            "SpecialEffect": null,
+            "StatChanges": {}
+        },
+        "growth":{
+            "DisplayName" : "Growth",
+            "Type": "Normal",
+            "Power": 0,
+            "PP": 20,
+            "Accuracy": 101,
+            "Category": "Status",
+            "Flags": [],
+            "Target": "Self",
+            "Priority": 0,
+            "SpecialEffect": null,
+            "StatChanges": {
+                "100": {
+                    "Target": "Victim",
+                    "Attack": 1,
+                    "Special Attack": 1
+                }
+            }
+        },
+        "leech_seed":{
+            "DisplayName" : "Leech Seed",
+            "Type": "Grass",
+            "Power": 0,
+            "PP": 10,
+            "Accuracy": 90,
+            "Category": "Status",
+            "Flags": [],
+            "Target": "AdjacentFoe",
+            "Priority": 0,
+            "SpecialEffect": "leech_seed",
+            "StatChanges": {}
+        },
+        "razor_leaf":{
+            "DisplayName" : "Razor Leaf",
+            "Type": "Grass",
+            "Power": 55,
+            "PP": 25,
+            "Accuracy": 95,
+            "Category": "Physical",
+            "Flags": [],
+            "Target": "AdjacentFoe",
+            "Priority": 0,
+            "SpecialEffect": null,
+            "StatChanges": {}
+        },
+        "poison_powder":{
+            "DisplayName" : "Poison Powder",
+            "Type": "Poison",
+            "Power": 0,
+            "PP": 35,
+            "Accuracy": 75,
+            "Category": "Status",
+            "Flags": ["Powder"],
+            "Target": "AdjacentFoe",
+            "Priority": 0,
+            "SpecialEffect": "",
+            "StatChanges": {
+                "100": {
+                    "Target": "Victim",
+                    "StatusEffect": "Poison_1"
+                }
+            }
+        },
+        "tail_whip":{
+            "DisplayName" : "Tail Whip",
+            "Type": "Normal",
+            "Power": 0,
+            "PP": 30,
+            "Accuracy": 100,
+            "Category": "Status",
+            "Flags": [],
+            "Target": "AllAdjacentFoes",
+            "Priority": 0,
+            "SpecialEffect": "",
+            "StatChanges": {
+                "100": {
+                    "Target": "Victim",
+                    "Defence": "-1"
+                }
+            }
+        }
+    }
+}

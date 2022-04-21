@@ -1,0 +1,249 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://WorldMaps/SceneManager.gd" type="Script" id=1]
+[ext_resource path="res://WorldMaps/StartingTown.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Combat/ui/MenueBox.png" type="Texture" id=3]
+[ext_resource path="res://Combat/ui/pkmnfl.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeToBlack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_fading"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeToClear"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "FadeToCombat"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "noColorRect"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "FinishedCombatFade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "clear_combat"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "WildCombatStart"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.25 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "startEncounter"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Menue/Menue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Menue" type="CanvasLayer" parent="."]
+
+[node name="Menue" type="Control" parent="Menue"]
+margin_left = 255.0
+margin_top = 4.0
+margin_right = 295.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Menue/Menue"]
+margin_right = 62.0
+margin_bottom = 94.0
+texture = ExtResource( 3 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menue/Menue/NinePatchRect"]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 70.0
+margin_bottom = 95.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menue/Menue/NinePatchRect/VBoxContainer"]
+margin_right = 54.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 50, 11 )
+custom_colors/default_color = Color( 0.407843, 0.407843, 0.407843, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "Pokemon"
+
+[node name="ScreenTransition" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition"]
+anims/FadeToBlack = SubResource( 1 )
+anims/FadeToClear = SubResource( 3 )
+anims/FadeToCombat = SubResource( 6 )
+anims/FinishedCombatFade = SubResource( 5 )
+anims/RESET = SubResource( 2 )
+anims/WildCombatStart = SubResource( 4 )
+
+[node name="ColorFade" type="ColorRect" parent="ScreenTransition"]
+anchor_left = -0.615
+anchor_top = -1.089
+anchor_right = 0.767
+anchor_bottom = 0.086
+margin_left = -115.2
+margin_top = -49.98
+margin_right = -360.44
+margin_bottom = -237.48
+rect_scale = Vector2( 3.05753, 14.3051 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentScene" type="Node2D" parent="."]
+
+[node name="StartingTown" parent="CurrentScene" instance=ExtResource( 2 )]
+position = Vector2( 118, -33 )
